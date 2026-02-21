@@ -12,8 +12,9 @@ To run a full local stack (gateway + brokers), use the gateway repo:
 
 ## Install
 ```
-composer require snoke/ws-bundle:dev-main
+composer require snoke/ws-bundle:0.1.1-alpha.2
 ```
+If you want the latest changes, use `dev-main`.
 
 Note: the bundle depends on `open-telemetry/transport-grpc`, which requires the PHP `grpc` extension.
 For local dev you can either install `ext-grpc` or use:

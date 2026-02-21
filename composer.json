@@ -1,6 +1,7 @@
 {
   "name": "snoke/ws-bundle",
   "type": "symfony-bundle",
+  "license": "MIT",
   "require": {
     "php": ">=8.4",
     "symfony/framework-bundle": "^8.0",
