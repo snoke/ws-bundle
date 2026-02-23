@@ -12,7 +12,7 @@ To run a full local stack (gateway + brokers), use the gateway repo:
 
 ## Install
 ```
-composer require snoke/ws-bundle:0.1.1-alpha.2
+composer require snoke/ws-bundle:0.1.2
 ```
 If you want the latest changes, use `dev-main`.
 
