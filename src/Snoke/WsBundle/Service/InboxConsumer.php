@@ -74,7 +74,15 @@ class InboxConsumer
                     }
                     foreach ($this->normalizeEntries($entries) as [$entryId, $fields]) {
                         $entryId = (string) $entryId;
-                        $this->handleEvent($fields);
+                        try {
+                            $this->handleEvent($fields);
+                        } catch (\Throwable $e) {
+                            $this->logger->error('ws.inbox.handle_error: '.$e->getMessage(), [
+                                'stream' => $stream,
+                                'entry_id' => $entryId,
+                            ]);
+                        }
+                        // Always advance the stream cursor to avoid replaying a poisoned entry forever.
                         $lastIds[$streamIndex[$stream]] = $entryId;
                     }
                 }
